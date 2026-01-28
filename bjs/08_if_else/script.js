@@ -1,3 +1,4 @@
+
 let minValue = parseInt(prompt('Минимальное значение','0')) || 0;
 // minValue = minValue > 999 ? 999 : minValue < -999 ? -999 : minValue;
 
