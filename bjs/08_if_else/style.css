@@ -1,4 +1,46 @@
 .game-card {
     height: 100vh;
-    font-family: 'Open Sans', monospace;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-info {
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 12px 20px;
+    transition: all 0.2s ease;
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(to bottom, #2ecc71, #27ae60);
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 15px 25px;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn-link {
+    color: #e74c3c;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.btn-info:hover {
+    background: linear-gradient(to bottom, #2980b9, #1c5d91);
+    transform: translateY(-2px);
+}
+
+.btn-success:hover {
+    background: linear-gradient(to bottom, #27ae60, #1e8449);
+    transform: translateY(-2px);
+}
+
+.btn-link:hover {
+    color: #c0392b;
+    text-decoration: underline;
 }
