@@ -12,9 +12,6 @@
 ## Задачи и цели
 ### 1. Создание простого калькулятора.
 
-[Открыть калькулятор >](https://github.com/TeeHoL1k/php/blob/master/bjs/07_Number_and_string/index.html)
-
-
 ### Техническое задание
 
 ✅ __Задание 1__ 
