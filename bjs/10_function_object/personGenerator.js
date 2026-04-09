@@ -50,36 +50,6 @@ const personGenerator = {
             "id_10": "Оксана"
         }
     }`,
-    PatronymicMaleJson: `{
-        "count": 10,
-        "list": {
-            "id_1": "Александрович",
-            "id_2": "Владимирович",
-            "id_3": "Андреевич",
-            "id_4": "Иванович",
-            "id_5": "Николаевич",
-            "id_6": "Петрович",
-            "id_7": "Сергеевич",
-            "id_8": "Тимофеевич",
-            "id_9": "Юрьевич",
-            "id_10": "Яковлевич"
-        }
-    }`,
-    PatronymicFemaleJson: `{
-        "count": 10,
-        "list": {
-            "id_1": "Александровна",
-            "id_2": "Алексеевна",
-            "id_3": "Андреевна",
-            "id_4": "Ивановна",
-            "id_5": "Николаевна",
-            "id_6": "Петровна",
-            "id_7": "Сергеевна",
-            "id_8": "Тимофеевна",
-            "id_9": "Юрьевна",
-            "id_10": "Яковлевна"
-        }
-    }`,
     months: [
         {name: "января", days: 31 },
         {name: "февраля", days: 28 },
@@ -130,8 +100,6 @@ const personGenerator = {
         } else {
             return this.randomValue(this.firstNameFemaleJson)
         };
-        
-        // return this.randomValue(this.firstNameMaleJson);
     },
 
 
@@ -143,19 +111,25 @@ const personGenerator = {
         } else {
             return surname;
         };
-
-       // return this.randomValue(this.surnameJson);
-
     },
 
      randomPatronymic: function() {
+        const name = this.randomValue(this.firstNameMaleJson);
+        let base = name;
 
-         if (this.person.gender === this.GENDER_MALE) {
-            return this.randomValue(this.PatronymicMaleJson)
+        if (name.slice(-1) === 'й') {
+            base = name.slice(0, -1) + 'е';
+        } else if (name.slice(-1) === 'а') {
+            base = name.slice(0, -1);
+        } else if (name.slice(-1) === 'ь') {
+            base = name.slice(0, -1);
+        }
+
+        if (this.person.gender === this.GENDER_MALE) {
+            return base + 'ович';
         } else {
-            return this.randomValue(this.PatronymicFemaleJson)
-        };
-
+            return base + 'овна';
+        }
     },
     randomGender: function() {
         const gender = this.randomIntNumber(1, 0) ? this.GENDER_MALE : this.GENDER_FEMALE;
